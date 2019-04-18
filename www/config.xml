@@ -6,10 +6,10 @@
         id        = "com.phonegap.helloworld"
         version   = "1.0.0">
 
-    <name>Transpace</name>
+    <name>Gravt</name>
 
     <description>
-        Transpace is a game with physics and pagination made with ZIMjs;
+        Gravt is a game with physics, gravity and pagination made with ZIMjs;
     </description>
 
     <author href="http://ngocto.com">
