@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>ZIM Frame - Fit Template</title>
+<title>Transpace</title>
 
 <!-- Welcome to ZIM at https://zimjs.com - Code Creativity!              	        -->
 <!-- ZIM runs on the HTML Canvas powered by JavaScript and CreateJS https://createjs.com -->
@@ -22,35 +22,27 @@
 // "full"	sets stage to window size with no scaling
 // "tagID"	add canvas to HTML tag of ID - set to dimensions if provided - no scaling
 
-var scaling = "fit"; // this will resize to fit inside the screen dimensions
-var width = 1024;
-var height = 768;
-var color = light; // ZIM colors like green, blue, pink, faint, clear, etc. available globally
-var outerColor = dark; // any HTML colors like "violet", "#333", etc. fine to use
+var scaling = "full";
 
-var frame = new Frame(scaling, width, height, color, outerColor);
+var assets = ["bg_volcano_1.png","bg_volcano_2.png","bg_volcano_3.png","bg_volcano_4.png","bg_volcano_5.png","bg_volcano_6.png"];
+var path = "img/"
+
+var frame = new Frame({scaling, assets, path});
 frame.on("ready", function() {
     zog("ready from ZIM Frame"); // logs in console (F12 - choose console)
 
     var stage = frame.stage;
     var stageW = frame.width;
     var stageH = frame.height;
-
-    // see https://zimjs.com/learn.html for video and code tutorials
-    // see https://zimjs.com/docs.html for documentation
-    // see https://zimjs.com/bits.html for 64 Interactive Media techniques
-
-    // put your code here (you can delete this sample code)
-
-    // with chaining - can also assign to a variable for later access
-    new Circle(100, pink)
-        .center()
-        .drag();
-
-    // without chaining
-    // var circle = new Circle(100, pink);
-    // circle.center();
-    // circle.drag();
+    makeStage();
+    function makeStage() {
+        var bg6 = frame.asset("bg_volcano_6.png").pos({bottom: true});
+        var bg5 = frame.asset("bg_volcano_5.png").pos();
+        var bg4 = frame.asset("bg_volcano_4.png").pos({bottom: true});
+        var bg3 = frame.asset("bg_volcano_3.png").pos({bottom: true});
+        var bg2 = frame.asset("bg_volcano_2.png").pos({bottom: true});
+        var bg1 = frame.asset("bg_volcano_1.png").pos({bottom: true});
+    }
 
     stage.update(); // this is needed to show any changes
 
